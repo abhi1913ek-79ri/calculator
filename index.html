@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">calculator</h1>
+        </div>
+
+        <div class="display">
+            <div class="display-section-1">section-1</div>
+            <div class="display-section-2">section-2</div>
+            <div class="display-section-3"><input type="text" placeholder="0" class="display-input"></div>
+        </div>
+        <div class="keypad">
+            <div class="btn btn-top-right-color" id="btn-reciprocal"><span style="font-size:8px">1</span> /x</div>
+            <div class="btn btn-top-right-color" id="btn-square">x²</div>
+            <div class="btn btn-top-right-color" id="btn-sqrt">√x</div>
+            <div class="btn btn-top-right-color" id="btn-divide">÷</div>
+            <div class="btn" id="btn-7">7</div>
+            <div class="btn" id="btn-8">8</div>
+            <div class="btn" id="btn-9">9</div>
+            <div class="btn btn-top-right-color"  id="btn-multiply">×</div>
+            <div class="btn" id="btn-4">4</div>
+            <div class="btn" id="btn-5">5</div>
+            <div class="btn" id="btn-6">6</div>
+            <div class="btn btn-top-right-color" id="btn-sub">-</div>
+            <div class="btn" id="btn-1">1</div>
+            <div class="btn" id="btn-2">2</div>
+            <div class="btn" id="btn-3">3</div>
+            <div class="btn btn-top-right-color" id="btn-add">+</div>
+            <div class="btn"  id="btn-backspace"><svg fill="#000000" height="1.5em" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+                    <g>
+                        <g>
+                            <g>
+                                <path
+                                    d="M490.667,64H133.077c-7.196,0-13.906,3.627-17.848,9.647L3.485,244.314c-4.647,7.098-4.647,16.274,0,23.372
+                           l111.744,170.667c3.942,6.02,10.652,9.647,17.848,9.647h357.589c11.782,0,21.333-9.551,21.333-21.333V85.333
+                           C512,73.551,502.449,64,490.667,64z M469.333,405.333H144.609L46.833,256l97.776-149.333h324.725V405.333z" />
+                                <path d="M198.246,356.418c8.331,8.331,21.839,8.331,30.17,0l70.248-70.248l70.248,70.248c8.331,8.331,21.839,8.331,30.17,0
+                           s8.331-21.839,0-30.17L328.834,256l70.248-70.248c8.331-8.331,8.331-21.839,0-30.17s-21.839-8.331-30.17,0l-70.248,70.248
+                           l-70.248-70.248c-8.331-8.331-21.839-8.331-30.17,0c-8.331,8.331-8.331,21.839,0,30.17L268.495,256l-70.248,70.248
+                           C189.915,334.58,189.915,348.087,198.246,356.418z" />
+                            </g>
+                        </g>
+                    </g>
+                </svg></div>
+            <div class="btn" id="btn-0">0</div>
+            <div class="btn" id="btn-dot">.</div>
+            <div class="btn btn-top-right-color" id="btn-result">=</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

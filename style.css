@@ -1,0 +1,125 @@
+body{
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 75vh;
+    width: 25vw;
+    border: 1px solid grey;
+    background-color: rgb(218, 236, 252);
+    border-radius: 5px;
+    padding: 10px;
+}
+.header{
+    border: 1px solid rgb(186, 183, 183);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    background-color: rgb(201, 219, 235);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.title{
+    margin: 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+.display{
+    display: flex;
+    flex-direction: column;
+    height: 27%;
+    margin: 3px 0;
+    padding: 10px;
+    border: 1px solid rgb(186, 183, 183);
+    background-color: rgb(201, 219, 235);
+    margin-left: 5px;
+    margin-right: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.display-section-1{
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 0.3px solid white;
+    flex: 1;
+}
+.display-section-2{
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 0.3px solid white;
+    flex: 1;
+
+}
+.display-section-3{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    border-bottom: 0.3px solid white;
+    flex: 2;
+}
+.display-input{
+    font-size: 2.25em;
+    width: 0.66em ;
+    border: none;
+    background-color:rgb(201, 219, 235) ;
+
+}
+.active{
+    color: black;
+    background-color:rgb(201, 219, 235) ;
+    border-style: none;
+    outline: 0;
+}
+.btn{
+    display: flex;
+    height: 3.25em;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(186, 183, 183);
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 5px;
+    transition: all;
+    transition-duration: 200ms;
+    background-color: aliceblue;
+    
+
+}
+.btn:hover{
+    margin-right: 3px;
+    margin-left: 3px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    box-shadow: 0 0 5px 0.25px;
+}
+
+
+.keypad{
+    display: grid;
+    grid-template-rows: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
+}
+.btn-top-right-color{
+    background-color: rgb(201, 219, 235);
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+#btn-result{
+    color: white;
+    background-color: rgb(59, 100, 176);
+}
+
+/* num keys */
+
+
+
