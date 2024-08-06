@@ -159,12 +159,11 @@ $(".btn").click(function () {
             let operatorArray = [];
             let operatorIndexArray = [];
             let numberArray = [];
-
             result(numberArray,operatorIndexArray, operatorArray,inputValueStr,inputValueArray);
             console.log(operatorArray);
             console.log(operatorIndexArray);
             console.log(numberArray);
-            calculator(numberArray,operatorIndexArray, operatorArray,inputValueStr,inputValueArray);
+            arrayGenerator(numberArray,operatorIndexArray, operatorArray,inputValueStr,inputValueArray);
             break;
     }
 })
@@ -187,26 +186,30 @@ function result(numberArray,operatorIndexArray, operatorArray,inputValueStr,inpu
         if (!isNaN((inputValueStr[i]))) {
             console.log(`${inputValueStr[i]} is a number`);
             if (!isNaN(inputValueStr[i-1])) {
-                numberArray[numberArray.length-1]=inputValueStr[i - 1] + inputValueStr[i];
                 inputValueArray[inputValueArray.length-1]=inputValueStr[i - 1] + inputValueStr[i];
                 continue;
             }
-            numberArray.push(inputValueStr[i]);
             inputValueArray.push(inputValueStr[i]);
 
 
             // toGetFullNumber
         } else {
             console.log(`${inputValueStr[i]} is  a operator`);
-            operatorArray.push(inputValueStr[i]);
-            operatorIndexArray.push(i);
             inputValueArray.push(inputValueStr[i]);
+        }
+    }
+    for(let i=0;i<inputValueArray.length;i++){
+        if (!isNaN((inputValueArray[i]))){
+            numberArray.push(inputValueArray[i]);
+        }else{
+            operatorArray.push(inputValueArray[i]);
+            operatorIndexArray.push(i);
         }
     }
 
 }
 
-function calculator(numberArray,operatorIndexArray, operatorArray,inputValueStr,inputValueArray) {
+function arrayGenerator(numberArray,operatorIndexArray, operatorArray,inputValueStr,inputValueArray) {
     let divideIndexArray=[];
     let multiplyIndexArray=[];
     let addIndexArray=[];
@@ -247,11 +250,58 @@ function calculator(numberArray,operatorIndexArray, operatorArray,inputValueStr,
     console.log(addIndexArray);
     console.log(subIndexArray);
     console.log(inputValueArray);
+    calculate(divideIndexArray,multiplyIndexArray,addIndexArray,subIndexArray,inputValueArray);
 
+    
+}
+
+// calculate function
+function calculate(divideIndexArray,multiplyIndexArray,addIndexArray,subIndexArray,inputValueArray){
     // go to calculation side
     if(divideIndexArray.length!=0){
         for(index of divideIndexArray){
+            let start=index-1;
+            const delCount=3;
+            inputValueArray.splice(start,delCount,inputValueArray[start]+"÷"+ inputValueArray[start+2]);
+            updateOperatorIndexAarray(divideIndexArray,start);
+            console.log(divideIndexArray);
+        }
+    }
+    if(multiplyIndexArray.length!=0){
+        for(index of multiplyIndexArray){
+            let start=index-1;
+            const delCount=3;
+            inputValueArray.splice(start,delCount,inputValueArray[start]+"×"+ inputValueArray[start+2]);
+            updateOperatorIndexAarray(multiplyIndexArray,start);
+            console.log(multiplyIndexArray);
+        }
+    }
+    if(addIndexArray.length!=0){
+        for(index of addIndexArray){
+            let start=index-1;
+            const delCount=3;
+            inputValueArray.splice(start,delCount,inputValueArray[start]+"+"+ inputValueArray[start+2]);
+            updateOperatorIndexAarray(addIndexArray,start);
+            console.log(addIndexArray);
+        }
+    }
+    if(subIndexArray.length!=0){
+        for(index of subIndexArray){
+            let start=index-1;
+            const delCount=3;
+            inputValueArray.splice(start,delCount,inputValueArray[start]+"-"+ inputValueArray[start+2]);
+            updateOperatorIndexAarray(subIndexArray,start);
+            console.log(subIndexArray);
+        }
+    }
+    console.log(inputValueArray);
+}
 
+// update index of  operators
+function updateOperatorIndexAarray(operatorIndexAarray,start){
+    for(let i=0;i<operatorIndexAarray.length;i++){
+        if(operatorIndexAarray[i]>start){
+            operatorIndexAarray[i]-=2;
         }
     }
 }
