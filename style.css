@@ -9,6 +9,7 @@ body{
     flex-direction: column;
     height: 75vh;
     width: 25vw;
+    min-width: 300px;
     border: 1px solid grey;
     background-color: rgb(218, 236, 252);
     border-radius: 5px;
@@ -119,7 +120,10 @@ body{
     background-color: rgb(59, 100, 176);
 }
 
-/* num keys */
-
-
+/* pressed */
+.pressed{
+    color: rgb(255, 255, 255);
+    /* background-color: rgb(232, 232, 248); */
+    border-bottom: 1px solid rgb(116, 116, 146);
+}
 
