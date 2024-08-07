@@ -57,6 +57,12 @@ $(".btn").click(function () {
         case "btn-divide":
             $(".display-section-3").text($(".display-section-3").text() + "÷");
             break;
+        case "btn-dot":
+            $(".display-section-3").text($(".display-section-3").text() + ".");
+            break;
+        case "btn-AC":
+            allClear();
+            break;
         // case "btn-sqrt":
         //     $(".display-section-3").text($(".display-section-3").text() + `sqrt(${})`);
         //     break;
@@ -79,9 +85,9 @@ function result(inputValue) {
     console.log(result);
     // display-section-2
     $(".display-section-1").text(inputValue.replaceAll('*', '×').replaceAll('/', '÷'));
-    $(".display-section-2").text("= "+result);
+    $(".display-section-2").text("= " + result);
     $(".display-section-3").text(result);
-    
+
 
 }
 // keyborad event
@@ -138,11 +144,24 @@ $(document).keydown(function (event) {
         case "/":
             $(".display-section-3").text($(".display-section-3").text() + "÷");
             break;
+        case ".":
+            $(".display-section-3").text($(".display-section-3").text() + ".");
+            break;
         case "Enter":
             let inputValue = $(".display-section-3").text();
             result(inputValue);
     }
 });
+
+// All clear
+function allClear() {
+    $(".display-section-1").text("0");
+    $(".display-section-2").text("0");
+    $(".display-section-3").text("0");
+
+}
+
+
 // btn animation
 function btn_animation(currentBtnId) {
     $(`#${currentBtnId}`).addClass("pressed");

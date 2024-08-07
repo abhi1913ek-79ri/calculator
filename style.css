@@ -141,3 +141,7 @@ body{
 .placeholder{
     color: rgb(109, 105, 105);
 }
+#btn-AC{
+    background-color: rgb(253, 195, 4);
+    color: rgb(255, 255, 255);
+}
