@@ -1,173 +1,148 @@
 // calculator
 
-// array
-
-
-// function()
-
-function add(num1, num2) {
-    return num1 + num2
-}
-function sub(num1, num2) {
-    return num1 - num2
-}
-function multiply(num1, num2) {
-    return num1 * num2
-}
-function divide(num1, num2) {
-    return num1 / num2
-}
-
-
-
-// click-input-display
-$(".display-input").click(function () {
-    $(this).addClass("active");
-})
-
-
-// input resizer
-$(".display-input").keydown(function (Event) {
-    console.log(`${Event.key} is pressed`)
-    $(".display-input").animate("focus")
-    console.log($(".display-input").val().length);
-    let lengthOfDisplayInput = $(".display-input").val().length;
-    // here i taken extra space for diplay the entered out come
-    $(".display-input").css("width", (`${(lengthOfDisplayInput + 1) * 0.57}em`));
-    if (Event.key === "Backspace") {
-        $(".display-input").css("width", (`${(lengthOfDisplayInput) * 0.57}em`));
-    }
-});
-
-// resizer fuction
-function resizer(lengthOfDisplayInput) {
-    // here i taken extra space for diplay the entered out come
-    if (lengthOfDisplayInput <= 17) {
-        $(".display-input").css("width", (`${(lengthOfDisplayInput) * 0.57}em`));
-    } else if (lengthOfDisplayInput < 30) {
-        // reduce font size
-        $(".display-input").css("font-size", (`${(1.5)}em`));
-        $(".display-input").css("width", (`${(lengthOfDisplayInput) * 0.57}em`));
-    }
-
-    // $(".display-input").css("max-width", (`${17 * 0.57}em`));
-    if (Event.key === "Backspace") {
-        if (lengthOfDisplayInput <= 17) {
-            $(".display-input").css("font-size", (`${(2.25)}em`));
-            $(".display-input").css("width", (`${(lengthOfDisplayInput) * 0.57}em`));
-
-        }
-
-    }
-}
+// function & operations
 
 // key pad-click input
 $(".btn").click(function () {
     let buttonId = $(this).attr("id");
     btn_animation(buttonId);
-    let lengthOfDisplayInput = 0;
     console.log($(this).attr("id"));
     switch (buttonId) {
         case "btn-1":
-            $(".display-input").val($(".display-input").val() + "1");
-            lengthOfDisplayInput = $(".display-input").val().length;
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "1");
             break;
+
         case "btn-2":
-            $(".display-input").val($(".display-input").val() + "2");
-            lengthOfDisplayInput = $(".display-input").val().length;
-
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "2");
             break;
-        case "btn-3":
-            $(".display-input").val($(".display-input").val() + "3");
-            lengthOfDisplayInput = $(".display-input").val().length;
 
-            resizer(lengthOfDisplayInput);
+        case "btn-3":
+            $(".display-section-3").text($(".display-section-3").text() + "3");
             break;
         case "btn-4":
-            $(".display-input").val($(".display-input").val() + "4");
-            lengthOfDisplayInput = $(".display-input").val().length;
-
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "4");
             break;
         case "btn-5":
-            $(".display-input").val($(".display-input").val() + "5");
-            lengthOfDisplayInput = $(".display-input").val().length;
-
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "5");
             break;
         case "btn-6":
-            $(".display-input").val($(".display-input").val() + "6");
-            lengthOfDisplayInput = $(".display-input").val().length;
-
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "6");
             break;
         case "btn-7":
-            $(".display-input").val($(".display-input").val() + "7");
-            lengthOfDisplayInput = $(".display-input").val().length;
-
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "7");
             break;
         case "btn-8":
-            $(".display-input").val($(".display-input").val() + "8");
-            lengthOfDisplayInput = $(".display-input").val().length;
-
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "8");
             break;
         case "btn-9":
-            $(".display-input").val($(".display-input").val() + "9");
-            lengthOfDisplayInput = $(".display-input").val().length;
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "9");
             break;
 
         case "btn-0":
-            $(".display-input").val($(".display-input").val() + "0");
-            lengthOfDisplayInput = $(".display-input").val().length;
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "0");
             break;
 
         case "btn-backspace":
-            $(".display-input").val($(".display-input").val().slice(0, $(".display-input").val().length - 1));
-            lengthOfDisplayInput = $(".display-input").val().length;
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text().slice(0, $(".display-section-3").text().length - 1));
             break;
         case "btn-add":
-            $(".display-input").val($(".display-input").val() + "+");
-            lengthOfDisplayInput = $(".display-input").val().length;
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "+");
             break;
         case "btn-sub":
-            $(".display-input").val($(".display-input").val() + "-");
-            lengthOfDisplayInput = $(".display-input").val().length;
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "-");
             break;
         case "btn-multiply":
-            $(".display-input").val($(".display-input").val() + "×");
-            lengthOfDisplayInput = $(".display-input").val().length;
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "×");
             break;
         case "btn-divide":
-            $(".display-input").val($(".display-input").val() + "÷");
-            lengthOfDisplayInput = $(".display-input").val().length;
-            resizer(lengthOfDisplayInput);
+            $(".display-section-3").text($(".display-section-3").text() + "÷");
             break;
+        // case "btn-sqrt":
+        //     $(".display-section-3").text($(".display-section-3").text() + `sqrt(${})`);
+        //     break;
         case "btn-result":
-            let inputValueStr = $(".display-input").val();
-            let inputValueArray=[];
-            console.log("sumbit");
-            let operatorArray = [];
-            let operatorIndexArray = [];
-            let numberArray = [];
-            result(numberArray,operatorIndexArray, operatorArray,inputValueStr,inputValueArray);
-            console.log(operatorArray);
-            console.log(operatorIndexArray);
-            console.log(numberArray);
-            arrayGenerator(numberArray,operatorIndexArray, operatorArray,inputValueStr,inputValueArray);
-            break;
+            let inputValue = $(".display-section-3").text();
+            result(inputValue);
+
     }
 })
 
+
+// result
+function result(inputValue) {
+    // check for error
+    console.log(inputValue);
+    checkError(inputValue);
+    inputValue = inputValue.replaceAll('×', '*').replaceAll('÷', '/');
+    console.log(inputValue);
+    let result = eval(inputValue);
+    console.log(result);
+    // display-section-2
+    $(".display-section-1").text(inputValue.replaceAll('*', '×').replaceAll('/', '÷'));
+    $(".display-section-2").text("= "+result);
+    $(".display-section-3").text(result);
+    
+
+}
+// keyborad event
+$(document).keydown(function (event) {
+    let key = event.key;
+    console.log(key);
+    switch (key) {
+        case "1":
+            $(".display-section-3").text($(".display-section-3").text() + "1");
+            break;
+
+        case "2":
+            $(".display-section-3").text($(".display-section-3").text() + "2");
+            break;
+
+        case "3":
+            $(".display-section-3").text($(".display-section-3").text() + "3");
+            break;
+        case "4":
+            $(".display-section-3").text($(".display-section-3").text() + "4");
+            break;
+        case "5":
+            $(".display-section-3").text($(".display-section-3").text() + "5");
+            break;
+        case "6":
+            $(".display-section-3").text($(".display-section-3").text() + "6");
+            break;
+        case "7":
+            $(".display-section-3").text($(".display-section-3").text() + "7");
+            break;
+        case "8":
+            $(".display-section-3").text($(".display-section-3").text() + "8");
+            break;
+        case "9":
+            $(".display-section-3").text($(".display-section-3").text() + "9");
+            break;
+
+        case "0":
+            $(".display-section-3").text($(".display-section-3").text() + "0");
+            break;
+
+        case "Backspace":
+            $(".display-section-3").text($(".display-section-3").text().slice(0, $(".display-section-3").text().length - 1));
+            break;
+        case "+":
+            $(".display-section-3").text($(".display-section-3").text() + "+");
+            break;
+        case "-":
+            $(".display-section-3").text($(".display-section-3").text() + "-");
+            break;
+        case "*":
+            $(".display-section-3").text($(".display-section-3").text() + "×");
+            break;
+        case "/":
+            $(".display-section-3").text($(".display-section-3").text() + "÷");
+            break;
+        case "Enter":
+            let inputValue = $(".display-section-3").text();
+            result(inputValue);
+    }
+});
 // btn animation
 function btn_animation(currentBtnId) {
     $(`#${currentBtnId}`).addClass("pressed");
@@ -177,16 +152,18 @@ function btn_animation(currentBtnId) {
 }
 
 
-// input value seperation
-function result(numberArray,operatorIndexArray, operatorArray,inputValueStr,inputValueArray) {
+
+// error on the basis of length
+function checkError(inputValueStr) {
+    let inputValueArray = [];
     console.log(inputValueStr);
     console.log(inputValueStr.length);
     // check for numeric value
     for (let i = 0; i < inputValueStr.length; i++) {
         if (!isNaN((inputValueStr[i]))) {
             console.log(`${inputValueStr[i]} is a number`);
-            if (!isNaN(inputValueStr[i-1])) {
-                inputValueArray[inputValueArray.length-1]=inputValueStr[i - 1] + inputValueStr[i];
+            if (!isNaN(inputValueStr[i - 1])) {
+                inputValueArray[inputValueArray.length - 1] = inputValueStr[i - 1] + inputValueStr[i];
                 continue;
             }
             inputValueArray.push(inputValueStr[i]);
@@ -198,115 +175,11 @@ function result(numberArray,operatorIndexArray, operatorArray,inputValueStr,inpu
             inputValueArray.push(inputValueStr[i]);
         }
     }
-    for(let i=0;i<inputValueArray.length;i++){
-        if (!isNaN((inputValueArray[i]))){
-            numberArray.push(inputValueArray[i]);
-        }else{
-            operatorArray.push(inputValueArray[i]);
-            operatorIndexArray.push(i);
-        }
-    }
-
-}
-
-function arrayGenerator(numberArray,operatorIndexArray, operatorArray,inputValueStr,inputValueArray) {
-    let divideIndexArray=[];
-    let multiplyIndexArray=[];
-    let addIndexArray=[];
-    let subIndexArray=[];
-    console.log("inside calculation function");
-    if(operatorArray.includes("÷")){
-        for(let i=0;i<operatorArray.length;i++){
-            if(operatorArray[i]==="÷"){
-                divideIndexArray.push(operatorIndexArray[i]);
-            }
-        }
-    }
-    if(operatorArray.includes("×")){
-        for(let i=0;i<operatorArray.length;i++){
-            if(operatorArray[i]==="×"){
-                multiplyIndexArray.push(operatorIndexArray[i]);
-            }
-        }
-    }
-    if(operatorArray.includes("+")){
-        for(let i=0;i<operatorArray.length;i++){
-            if(operatorArray[i]==="+"){
-                addIndexArray.push(operatorIndexArray[i]);
-            }
-        }
-    }
-    if(operatorArray.includes("-")){
-        for(let i=0;i<operatorArray.length;i++){
-            if(operatorArray[i]==="-"){
-                subIndexArray.push(operatorIndexArray[i]);
-            }
-        }
-    }
-    // wait for other operator.........................................................
-
-    console.log(divideIndexArray);
-    console.log(multiplyIndexArray);
-    console.log(addIndexArray);
-    console.log(subIndexArray);
-    console.log(inputValueArray);
-    calculate(divideIndexArray,multiplyIndexArray,addIndexArray,subIndexArray,inputValueArray);
-
-    
-}
-
-// calculate function
-function calculate(divideIndexArray,multiplyIndexArray,addIndexArray,subIndexArray,inputValueArray){
-    // go to calculation side
-    if(divideIndexArray.length!=0){
-        for(index of divideIndexArray){
-            let start=index-1;
-            const delCount=3;
-            inputValueArray.splice(start,delCount,inputValueArray[start]+"÷"+ inputValueArray[start+2]);
-            updateOperatorIndexAarray(divideIndexArray,start);
-            console.log(divideIndexArray);
-        }
-    }
-    if(multiplyIndexArray.length!=0){
-        for(index of multiplyIndexArray){
-            let start=index-1;
-            const delCount=3;
-            inputValueArray.splice(start,delCount,inputValueArray[start]+"×"+ inputValueArray[start+2]);
-            updateOperatorIndexAarray(multiplyIndexArray,start);
-            console.log(multiplyIndexArray);
-        }
-    }
-    if(addIndexArray.length!=0){
-        for(index of addIndexArray){
-            let start=index-1;
-            const delCount=3;
-            inputValueArray.splice(start,delCount,inputValueArray[start]+"+"+ inputValueArray[start+2]);
-            updateOperatorIndexAarray(addIndexArray,start);
-            console.log(addIndexArray);
-        }
-    }
-    if(subIndexArray.length!=0){
-        for(index of subIndexArray){
-            let start=index-1;
-            const delCount=3;
-            inputValueArray.splice(start,delCount,inputValueArray[start]+"-"+ inputValueArray[start+2]);
-            updateOperatorIndexAarray(subIndexArray,start);
-            console.log(subIndexArray);
-        }
-    }
-    console.log(inputValueArray);
-}
-
-// update index of  operators
-function updateOperatorIndexAarray(operatorIndexAarray,start){
-    for(let i=0;i<operatorIndexAarray.length;i++){
-        if(operatorIndexAarray[i]>start){
-            operatorIndexAarray[i]-=2;
-        }
+    if (!inputValueArray.length % 2) {
+        console.log("envalid inout!");
+        $(".display-section-3").text("Invalid !");
     }
 }
-
-
 
 
 
