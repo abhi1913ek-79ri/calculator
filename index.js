@@ -72,6 +72,15 @@ $(".btn").click(function () {
 
     }
 })
+// sqrt
+function sqrt(){
+    let input_value=$(".display-section-3").text();
+    if(input_value.includes("√")){
+        for(let i=0;i<input_value.length;i++){
+            if(input_value)
+        }
+    }
+}
 
 
 // result
